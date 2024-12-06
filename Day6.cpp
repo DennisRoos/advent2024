@@ -57,6 +57,8 @@ int traverse(int x, int y) {
 	}
 	return visited_tiles;
 }
+
+
 int traverse_2(int x, int y) {
 	int direction = 0;
 	while (x >= 0 && x < fieldsize && y >= 0 && y < fieldsize) {
@@ -131,18 +133,18 @@ int main(int argc, char* argv[]) {
 
 		for (int x = 0; x < fieldsize; x++) {
 			for (int y = 0; y < fieldsize; y++) {
-				if (!(x == start_x && y == start_y) && field[x][y] != '#') {
+				if (!(x == start_x && y == start_y) && field[x][y] != '#') { // only try on empty places
 
-					for (int i = 0; i < fieldsize; i++) {
+					for (int i = 0; i < fieldsize; i++) { // clear visited array
 						for (int j = 0; j < fieldsize; j++){
 							for (int k = 0; k < 4; k++) {
 								visited[i][j][k] = false;
 							}
 						}
 					}
-					field[x][y] = '#';
+					field[x][y] = '#';  // place obstacle
 					answer2 += traverse_2(start_x, start_y);
-					field[x][y] = '.';
+					field[x][y] = '.';  // remove obstacle
 				}
 
 			}
