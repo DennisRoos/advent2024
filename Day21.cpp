@@ -124,7 +124,7 @@ int main(int argc, char* argv[]) {
 		for (int i = 0; i < 11; i++) {
 			for(int j = 0; j < 11; j++) {
 				find_keypad_string(i, j);
-				cout << i << " -> " << j << ": " << keypad[i][j] << endl;
+				//cout << i << " -> " << j << ": " << keypad[i][j] << endl;
 			}
 		}
 		while (infile >> s){
@@ -139,10 +139,8 @@ int main(int argc, char* argv[]) {
 			long long length = expand(robot, 23, 25);
 			s.pop_back();
 			long long numeric_part = stoll(s);
-			cout << "For part 2: " << length << " * " << numeric_part << " = " << length * numeric_part << endl;
 			answer1 += length * numeric_part;
 			length = expand(robot, 0, 25);
-			cout << "For part 2: " << length << " * " << numeric_part << " = " << length * numeric_part << endl;
 			answer2 += length * numeric_part;
 		}
 
@@ -154,9 +152,5 @@ int main(int argc, char* argv[]) {
 		cout << "can't find file?\n";
 	}
 }
-
-// 215231209397376 too low
-// 531831880284030 incorrect
-// 171631705729026 incorrect
 
 // 154115708116294 correct p2 for example
