@@ -42,9 +42,8 @@ void find_cluster(vector<int> v, int n) {
 		bool b = true;
 		for (int j = 0; j < v.size(); j++) {
 			if (b && !connections[i][v[j]]) {
-				if (convert_int(n) == "ka") {
-				}
 				b = false;
+				break;
 			}
 		}
 		if (b) {// connected to all members of cluster
@@ -117,5 +116,3 @@ int main(int argc, char* argv[]) {
 		cout << "can't find file?\n";
 	}
 }
-
-// 154115708116294 correct p2 for example
